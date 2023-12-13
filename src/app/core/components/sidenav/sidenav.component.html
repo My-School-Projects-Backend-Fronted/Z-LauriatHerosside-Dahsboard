@@ -1,0 +1,29 @@
+<mat-sidenav-container autosize>
+  <mat-sidenav [opened]="true" mode="side">
+    <div class="budget">
+      <button mat-fab extended class="budget-btn">
+        <mat-icon>refresh</mat-icon>
+        Réinitialiser
+      </button>
+      <h2 class="budget-text">Afficher le budget</h2>
+      <mat-slider min="200" max="500">
+        <input value="300" matSliderStartThumb>
+        <input value="400" matSliderEndThumb>
+      </mat-slider>
+      <div class="budget-price">
+        <h1>20f</h1>
+        <h1>190 fr</h1>
+      </div>
+    </div>
+    <mat-divider></mat-divider>
+    <section class="example-section">
+      <h4>Assureurs</h4>
+      <p><mat-checkbox formControlName="pepperoni">Pepperoni</mat-checkbox></p>
+      <p><mat-checkbox formControlName="extracheese">Extra Cheese</mat-checkbox></p>
+      <p><mat-checkbox formControlName="mushroom">Mushroom</mat-checkbox></p>
+    </section>
+  </mat-sidenav>
+  <mat-sidenav-content>
+<!-- <app-home ></app-home> -->
+  </mat-sidenav-content>
+</mat-sidenav-container>

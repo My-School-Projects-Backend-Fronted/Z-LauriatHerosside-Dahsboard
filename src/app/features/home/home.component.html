@@ -1,0 +1,60 @@
+
+  <div class="product-section">
+    @for (item of datas |async; track $index) {
+    <mat-card class="example-card">
+      <mat-card-header>
+        <div class="header-card">
+          <img
+            src="https://assets-global.website-files.com/64f9cc99e71db04ed5b890bd/64f9d0c16cddcbca2a417614_BigBroker_icon256.png"
+            alt="">
+          <div class="title"> <mat-card-title> {{item.title}}</mat-card-title>
+            <mat-card-subtitle>{{item.subtitle}}</mat-card-subtitle>
+            <mat-card-subtitle>{{item.level}}</mat-card-subtitle>
+          </div>
+          <!-- <div class="info">Concorde à 99%</div> -->
+        </div>
+      </mat-card-header>
+      <mat-divider></mat-divider>
+      <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
+
+      <mat-card-content class="card-content">
+        @for (cour of item.cours ; track $index) {
+        <div class="card-besoins">
+          <!-- <mat-icon>add</mat-icon> -->
+          <h5 class="example-margin">{{cour.title}}:</h5>
+          <input type="range" id="cowbell" name="cowbell" min="0" max="100" value={{cour.percentage}} step="10"
+            class="myRange" />
+          {{cour.percentage}}%
+        </div>
+        <!-- <div class="card-besoins">
+              <h5 class="example-margin">{{cour.title}}:</h5>
+              <mat-slider>
+                <input matSliderThumb>
+              </mat-slider>
+              <label class="example-margin">{{cour.percentage}}</label>
+            </div> -->
+        }@empty {
+        <li>Aucune donnée</li>
+        }
+      </mat-card-content>
+      <span class="broker-price">{{item.price_year}} €/mois</span>
+      <mat-card-actions class="action-btn">
+        <button mat-fab extended color="warn" class="action-btn1">
+          <mat-icon>add</mat-icon>
+          Options
+        </button>
+        <button mat-fab extended color="warn" class="action-btn2">
+          <mat-icon>visibility</mat-icon>
+          Détails
+        </button>
+      </mat-card-actions>
+      <mat-divider></mat-divider>
+      <mat-checkbox class="example-margin3" (click)="onCheckboxClick">Selectionner</mat-checkbox>
+    </mat-card>
+
+
+    } @empty {
+    <li>Aucune tâche</li>
+    }
+  </div>
+

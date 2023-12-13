@@ -1,0 +1,54 @@
+mat-sidenav-container {
+  height:85%;
+  overflow-x: hidden;
+}
+.budget{
+ overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.budget-btn{
+  margin-top: 50px;
+  align-self: center;
+  background-color: #00a8a5 ;
+  box-shadow: none;
+}
+.budget-text{
+  margin-top: 20px;
+  align-self: flex-start;
+}
+.budget-price{
+display: flex;
+justify-content: space-between;
+}
+
+mat-sidenav {
+
+  background-color: #f0f8fa;;
+
+  width: 350px;
+}
+mat-nav-list{
+
+  width: 100%;
+
+
+}
+mat-nav-list button{
+  margin-bottom: 100px;
+}
+mat-sidenav-content{
+  padding-top: .5rem;
+  // @media screen and (min-width: 600px) {
+  //     padding-top: 4rem;
+  // }
+}
+
+.btn2{
+  margin-top: 20px;
+  color: white;
+  background-color: rgb(211, 228, 222);
+}
+// .example-section {
+//   margin: 12px 0;
+// }

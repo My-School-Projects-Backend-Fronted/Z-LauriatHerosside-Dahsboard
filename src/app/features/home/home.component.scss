@@ -1,0 +1,160 @@
+h2 {
+  padding: 1rem;
+}
+
+.card-container {
+  border: solid red;
+  display: flex;
+  // justify-content: space-between;
+}
+
+.compare_btn {
+  background-color: #00a8a5;
+  color: black;
+  align-self: center;
+  box-shadow: none;
+}
+
+.example-card {
+  margin: 1rem;
+}
+
+.button {
+  margin-top: 10px;
+  background-color: white;
+  color: black;
+}
+
+
+
+img {
+  width: 60px;
+  height: 60px;
+}
+
+.info {
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  background-color: #00a8a5;
+  align-items: center;
+  width: 70px;
+  /* Adjust as needed */
+  height: 70px;
+  /* Adjust as needed */
+}
+
+.header-card {
+  // width: auto;
+  // border: solid red;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.product-section {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.example-card {
+  width: 300px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  height: 50%;
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+
+// .title{
+//   align-items: center;
+// }
+
+
+
+.action-btn {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.example-margin {
+  width: 200px;
+  display: flex;
+  justify-content: center;
+}
+
+.broker-price {
+  padding: 1.5%;
+  display: flex;
+  font-weight: 900;
+  justify-content: center;
+  background: linear-gradient(to right, #00a8a5, #30d6a0, #68d568);
+}
+
+.action-btn2 {
+  height: 35PX;
+  background-color: transparent;
+  border: solid #00a8a5;
+  color: black;
+}
+
+.action-btn1 {
+  margin-right: 10px;
+  height: 35PX;
+  background-color: #00a8a5;
+  // border: solid #00a8a5 ;
+  color: white;
+}
+
+.example-margin {
+  display: inline;
+  text-align: left !important;
+  margin: 0 !important;
+}
+
+.example-margin2 {
+  flex: 1;
+}
+
+.card-besoins {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 7px;
+  justify-content: space-between;
+}
+.example-margin3{
+  display: flex;
+  justify-content: center;
+}
+// .card-besoins {
+
+//   align-items: center;
+//   // border: solid red;
+//   justify-content: space-between;
+// }
+
+// .myRange::-webkit-slider-runnable-track {
+//   background: #00a8a5; /* Change this to the color you want */
+// }
+
+
+input[type="range"] {
+
+  // display: inline-block;
+  appearance: none;
+  width: 70px;
+  height: 3px;
+  //transform: scale(0.7);
+  border: 1px solid green;
+  border-radius: 5px;
+}
+
+// .myRange::-ms-thumb {
+//   background: #30d6a0; /* Change this to the color you want */
+// }
