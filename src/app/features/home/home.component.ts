@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter} from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input} from '@angular/core';
 import { MaterialsModule } from '../../shared/materials/materials.module';
 import { Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
@@ -8,6 +8,7 @@ import { selectFeatureBrokers } from '../../shared/store/broker.selector';
 import { BrokersState } from '../../shared/store/broker.reducer';
 import { loadBrokers } from '../../shared/store/broker.actions';
 import { FilterComponent } from '../filter/filter.component';
+import { MatCheckboxChange } from '@angular/material/checkbox';
 
 @Component({
   selector: 'app-home',
@@ -17,21 +18,28 @@ import { FilterComponent } from '../filter/filter.component';
   styleUrl: './home.component.scss',
 })
 export class HomeComponent  implements OnInit{
- @Output() onCheckboxClicked = new EventEmitter<void>();
+  badgeValue = 0;
+  @Output() badgeValueChange = new EventEmitter<number>();
+  @Input() toggleState!: boolean;
   datas!:  Observable<Brokers[]>
   brokers$ = this.store.select(selectFeatureBrokers);
-  // data$!: Observable<any[]>;
+
+
   constructor(private store: Store<BrokersState>) {}
-  onCheckboxClick() {
-    this.onCheckboxClicked.emit();
-  }
   ngOnInit() {
-     // this.data$ = this.brokers.getDbData();
     this.store.dispatch(loadBrokers());
     this.brokers$.subscribe(data => {
       console.log("donnée",data)
       this.datas = this.brokers$
     });
+  }
 
+  onSelectChange(event: MatCheckboxChange) {
+    if (event.checked) {
+      this.badgeValue++;
+    } else {
+      this.badgeValue--;
+    }
+    this.badgeValueChange.emit(this.badgeValue);
   }
 }

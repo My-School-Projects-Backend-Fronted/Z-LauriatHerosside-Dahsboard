@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MaterialsModule } from '../../shared/materials/materials.module';
 
 @Component({
@@ -9,8 +9,11 @@ import { MaterialsModule } from '../../shared/materials/materials.module';
   styleUrl: './filter.component.scss',
 })
 export class FilterComponent {
-  badgeValue = 0;
-  onCheckboxClicked() {
-    this.badgeValue++;
+  @Input() badgeValue!: number;
+  @Output() toggleChange = new EventEmitter<boolean>();
+  toggleState: boolean = false;
+  onToggleChange(checked: boolean) {
+    this.toggleState = checked;
+    this.toggleChange.emit(checked);
   }
 }

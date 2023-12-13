@@ -18,12 +18,19 @@
     <mat-divider></mat-divider>
     <section class="example-section">
       <h4>Assureurs</h4>
-      <p><mat-checkbox formControlName="pepperoni">Pepperoni</mat-checkbox></p>
-      <p><mat-checkbox formControlName="extracheese">Extra Cheese</mat-checkbox></p>
-      <p><mat-checkbox formControlName="mushroom">Mushroom</mat-checkbox></p>
+      <div class="assureur">
+        @for(item of datas$ | async; track $index) {
+        <mat-checkbox formControlName="pepperoni">{{item.title}}</mat-checkbox>
+        <!-- <mat-checkbox formControlName="extracheese">Extra Cheese</mat-checkbox>
+        <mat-checkbox formControlName="mushroom">Mushroom</mat-checkbox> -->
+        }@empty {
+        <li>Aucune donnée</li>
+        }
+
+      </div>
     </section>
   </mat-sidenav>
   <mat-sidenav-content>
-<!-- <app-home ></app-home> -->
+    <!-- <app-home ></app-home> -->
   </mat-sidenav-content>
 </mat-sidenav-container>

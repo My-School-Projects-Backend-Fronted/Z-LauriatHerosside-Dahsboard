@@ -37,7 +37,8 @@
         <li>Aucune donnée</li>
         }
       </mat-card-content>
-      <span class="broker-price">{{item.price_year}} €/mois</span>
+      <span class="broker-price">{{toggleState ? item.price_year : item.price_month}} {{toggleState ? '€/an' : '€/mois'}}</span>
+      <!-- <span class="broker-price">{{item.price_year}} €/mois</span> -->
       <mat-card-actions class="action-btn">
         <button mat-fab extended color="warn" class="action-btn1">
           <mat-icon>add</mat-icon>
@@ -49,7 +50,7 @@
         </button>
       </mat-card-actions>
       <mat-divider></mat-divider>
-      <mat-checkbox class="example-margin3" (click)="onCheckboxClick">Selectionner</mat-checkbox>
+      <mat-checkbox class="example-margin3" (change)="onSelectChange($event)">Selectionner</mat-checkbox>
     </mat-card>
 
 

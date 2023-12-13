@@ -1,18 +1,25 @@
-import { Injectable } from '@angular/core';
+import { environment } from './../../../environments/environment.development';
+import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/internal/Observable';
-import { map } from 'rxjs/operators';
+
 import { Brokers } from '../models/brokers';
+import { Insurer } from '../models/insurer';
+
 @Injectable({
   providedIn: 'root'
 })
 export class BrokersService {
-url = "http://localhost:3000/broker"
-  constructor(private http: HttpClient) {
+Url = environment.apiUrl
+private readonly http = inject(HttpClient);
+  // constructor(private http: HttpClient) {
 
-   }
-   getDbData(): Observable<Brokers[]> {
-    return this.http.get<Brokers[]>(this.url);
+  //  }
+   getBrokers(): Observable<Brokers[]> {
+    return this.http.get<Brokers[]>(`${this.Url}/broker`);
+  }
+  getAssureurs():Observable<Insurer[]>{
+    return this.http.get<Insurer[]>(`${this.Url}/insurer`);
   }
 
 }

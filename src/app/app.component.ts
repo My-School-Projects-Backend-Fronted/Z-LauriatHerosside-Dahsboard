@@ -17,9 +17,19 @@ import { HomeComponent } from './features/home/home.component';
     SidenavComponent,
     RouterModule,
     FilterComponent,
-    HomeComponent
+    HomeComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent {}
+export class AppComponent {
+  badgeValue = 0;
+  toggleState: boolean = false;
+
+  onBadgeValueChange(value: number) {
+    this.badgeValue = value;
+  }
+  onToggleChange(state: boolean) {
+    this.toggleState = state;
+  }
+}

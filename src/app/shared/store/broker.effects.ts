@@ -28,7 +28,7 @@ export class BrokerEffects {
   this.actions$.pipe(
     ofType(BrokersActions.loadBrokers),
     mergeMap(() =>
-      this.brokersService.getDbData().pipe(
+      this.brokersService.getBrokers().pipe(
         // tap((brokers) => {
         //   console.log("brokers", brokers); // Add this line to see the data
         //   return brokers; // Explicitly return the data for further processing

@@ -4,15 +4,14 @@
   </div>
   <div class="filter-card-btn">
     <button mat-raised-button  class="filter_btn">
-      <mat-icon>filter_list</mat-icon>
+      <mat-icon>tune</mat-icon>
       Filter
     </button>
     <button mat-raised-button [matBadge]="badgeValue" matBadgePosition="before" matBadgeColor="accent" class="compare_btn">
       <mat-icon>filter_list</mat-icon>
       Compare
     </button>
-
-    <mat-slide-toggle>Mensuel</mat-slide-toggle>
+    <mat-slide-toggle (change)="onToggleChange($event.checked)">{{ toggleState ? 'Annuel' : 'Mensuel' }}</mat-slide-toggle>
   </div>
 
 </div>

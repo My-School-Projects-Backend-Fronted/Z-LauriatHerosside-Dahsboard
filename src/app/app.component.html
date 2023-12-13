@@ -2,13 +2,17 @@
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav #sidenav class="sidenav" mode="side" opened>
     <!-- Side navigation content -->
-   <app-sidenav></app-sidenav>
+    <app-sidenav></app-sidenav>
   </mat-sidenav>
 
   <mat-sidenav-content>
     <!-- Main content -->
-    <app-filter></app-filter>
-    <app-home></app-home>
+
+    <!-- <app-filter [badgeValue]="badgeValue"  (toggleChange)="onToggleChange($event)"></app-filter>
+    <app-home (badgeValueChange)="onBadgeValueChange($event)"></app-home> -->
+
+    <app-filter [badgeValue]="badgeValue"  (toggleChange)="onToggleChange($event)"></app-filter>
+<app-home [toggleState]="toggleState" (badgeValueChange)="onBadgeValueChange($event)"></app-home>
     <!-- <app-brokers></app-brokers> -->
   </mat-sidenav-content>
 </mat-sidenav-container>
